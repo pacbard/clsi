@@ -1,0 +1,56 @@
+production:
+  latex_chroot_dir: <%= File.join(RAILS_ROOT, 'latexchroot') %>
+  latex_compile_dir_relative_to_chroot: <%= File.join(RAILS_ROOT, 'latexchroot/compiles') %>
+  latex_compile_dir: <%= File.join(RAILS_ROOT, 'latexchroot/compiles') %>
+  latex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "latex") %>
+  pdflatex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "pdflatex") %>
+  bibtex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "bibtex") %>
+  dvipdf_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "dvipdf") %>
+  dvips_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "dvips") %>
+  makeindex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "makeindex") %>
+  server_public_dir: <%= File.join(RAILS_ROOT, 'public') %>
+  compile_timeout: 10
+  bibtex_timeout: 10
+  dvipdf_timeout: 10
+  dvips_timeout: 10
+  host: <%= ENV['OPENSHIFT_APP_DNS'] %>
+  exception_notification_recipient: errors@examples.com
+  cache_dir: <%= File.join(RAILS_ROOT, 'cache') %>
+  
+development:
+  latex_chroot_dir: <%= File.join(RAILS_ROOT, 'latexchroot') %>
+  latex_compile_dir_relative_to_chroot: <%= File.join(RAILS_ROOT, 'latexchroot/compiles') %>
+  latex_compile_dir: <%= File.join(RAILS_ROOT, 'latexchroot/compiles') %>
+  latex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "latex") %>
+  pdflatex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "pdflatex") %>
+  bibtex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "bibtex") %>
+  dvipdf_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "dvipdf") %>
+  dvips_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "dvips") %>
+  makeindex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "makeindex") %>
+  server_public_dir: <%= File.join(RAILS_ROOT, 'public') %>
+  compile_timeout: 10
+  bibtex_timeout: 10
+  dvipdf_timeout: 10
+  dvips_timeout: 10
+  host: ENV['OPENSHIFT_APP_DNS']
+  exception_notification_recipient: errors@examples.com
+  cache_dir: <%= File.join(RAILS_ROOT, 'cache') %>
+  
+test:
+  latex_chroot_dir: <%= File.join(RAILS_ROOT, 'latexchroot') %>
+  latex_compile_dir_relative_to_chroot: <%= File.join(RAILS_ROOT, 'latexchroot/compiles') %>
+  latex_compile_dir: <%= File.join(RAILS_ROOT, 'latexchroot/compiles') %>
+  latex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "latex") %>
+  pdflatex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "pdflatex") %>
+  bibtex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "bibtex") %>
+  dvipdf_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "dvipdf") %>
+  dvips_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "dvips") %>
+  makeindex_command: <%= File.join(ENV['OPENSHIFT_DATA_DIR'], 'latex/bin/x86_64-linux', "makeindex") %>
+  server_public_dir: <%= File.join(RAILS_ROOT, 'public') %>
+  compile_timeout: 10
+  bibtex_timeout: 10
+  dvipdf_timeout: 10
+  dvips_timeout: 10
+  host: ENV['OPENSHIFT_APP_DNS']
+  exception_notification_recipient: errors@examples.com
+  cache_dir: <%= File.join(RAILS_ROOT, 'cache') %>

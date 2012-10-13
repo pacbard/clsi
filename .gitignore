@@ -1,14 +1,10 @@
 **.swp
 latexchroot
-db/*.sqlite3
 log
 public/output
 test
 chrooted*
 **.DS_Store
 **.tar.gz
-config/config.yml
 spec/fixtures/server_output/
-config/mailer.yml
-config/database.yml
-config/database.yml
+.c9*
