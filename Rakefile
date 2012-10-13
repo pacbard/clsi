@@ -8,3 +8,12 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
+
+desc "Cleans output"
+task :clean do
+  raise "### There are no output files to delete." unless File.directory?('public/output')
+  puts "## Deleting public/output and log dirs"
+  system "rm -r public/output/"
+  system "rm -r latexchroot/"
+  system "rm -r log/"
+end
