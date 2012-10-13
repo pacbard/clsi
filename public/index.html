@@ -60,58 +60,38 @@
       <ul class='links'>
         <li><a href="#get_token">Get Developer Token</a></li>
         <li><a href="http://wiki.github.com/jpallen/clsi/">Documentation</a></li>
-        <li><a href="http://github.com/jpallen/clsi">Download Code</a></li>
+        <li><a href="https://github.com/pacbard/clsi">Download Code</a></li>
+        <li><a href="#missing_packet">Request a packet</a></li>
       </ul>
       
       <p>
-        The Common LaTeX Service Interface is a web service providing access to a LaTeX compiler. 
+        The Common LaTeX Service Interface is a web service providing access to a LaTeX compiler. <br/>
+        This CLSI server runs on the <a href='https://openshift.redhat.com'>OpenShift</a>
+        network as a free public service.
       </p>
       
       <a name='get_token'/>
       <h2>How to get access</h2>
       
       <p>
-        To use the CLSI you will need a developer token. To request a token please email me at
-        <a href='mailto:james@scribtex.com'>james@scribtex.com</a>.
+        To use the CLSI you will need a developer token. To request a token, please email me at
+        <a href='mailto:bardellie@gmail.com'>bardellie@gmail.com</a>.
       </p>
       
-      <h2>An example request</h2>
+      <a name='missing_packet'/>
+      <h2>How to report a missing packet</h2>
       
-      <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;compile&gt;
-  &lt;token&gt;e491fa5a2a7b0021d71bd0a5786de4fe&lt;/token&gt;
-  &lt;resources root-resource-path=&quot;book.tex&quot;&gt;
-    &lt;resource path=&quot;book.tex&quot;&gt;
-      &lt;![CDATA[
-\documentclass{report}
-
-\begin{document}
-
-Hi, this is an example of LaTeX in use. 
-
-\input{chapters/chapter1.tex}
-
-\end{document}
-]]&gt;
-    &lt;/resource&gt;
-    &lt;resource url=&quot;http://www.example.com/files/chapters/chapter1.tex&quot; path=&quot;chapters/chapter1.tex&quot; modified=&quot;Sat Jan 16 15:33:07 +0000 2010&quot;&gt;
-    &lt;/resource&gt;
-  &lt;/resources&gt;
-&lt;/compile&gt;</pre>
-
-      <h2>An example response</h2>
+      <p>
+        At this time, this CLSI runs a striped-down version of LaTeX.  
+        To request the installation of a missin packet, please email me at
+        <a href='mailto:bardellie@gmail.com'>bardellie@gmail.com</a>.
+      </p>
       
-      <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;compile&gt;
-  &lt;status&gt;success&lt;/status&gt;
-  &lt;output&gt;
-    &lt;file type=&quot;pdf&quot; url=&quot;http://clsi.scribtex.com/output/2501b906ffdf392cfff3fbc4610d1be8/output.pdf&quot; mimetype=&quot;application/pdf&quot;/&gt;
-  &lt;/output&gt;
-  &lt;logs&gt;
-    &lt;file type=&quot;log&quot; url=&quot;http://clsi.scribtex.com/output/2501b906ffdf392cfff3fbc4610d1be8/output.log&quot; mimetype=&quot;text/plain&quot;/&gt;
-  &lt;/logs&gt;
-&lt;/compile&gt;</pre>
-
+      <h2>Client</h2>
+      <p>
+        If you are looking for a client to access this CLSI server, check out
+        my CLSI client on <a href='http://pacbard.github.com/RLatex/'>GitHub</a>.
+      </p>
     </div>
   </body>
 </html>
