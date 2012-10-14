@@ -81,9 +81,18 @@ class JSONParser
       else
         url = nil
       end
-      
+
+      if resource.has_key("encoding")?
+        encoding = resource_tag.attributes['encoding']
+        raise CLSI::ParseError, "encoding attribute should be a string" unless url.is_a?(String)
+      else
+        encoding = nil
+        
       if resource.has_key?("content")
-        content = resource["content"]
+        if encoding.eql?('base64')
+          content = Base64.decode64(resource["content"])
+        else
+          content = resource["content"]
         raise CLSI::ParseError, "content attribute should be a string" unless content.is_a?(String)
       else
         content = nil
