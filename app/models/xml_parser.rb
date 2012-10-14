@@ -52,7 +52,7 @@ class XMLParser
       url = resource_tag.attributes['url']
       encoding = resource_tag.attributes['encoding']
       if encoding.eql?('base64')
-        content = Base64.decode64(resource_tag.text.to_s.strip)
+        content = Base64.decode64(resource_tag.cdatas.join)
       elsif resource_tag.cdatas.empty?
         content = resource_tag.text.to_s.strip
       elsif
