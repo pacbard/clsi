@@ -83,7 +83,7 @@ class JSONParser
       end
 
       if resource.has_key("encoding")?
-        encoding = resource_tag.attributes['encoding']
+        encoding = resource["encoding"]
         raise CLSI::ParseError, "encoding attribute should be a string" unless url.is_a?(String)
       else
         encoding = nil
