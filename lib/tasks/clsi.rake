@@ -21,7 +21,9 @@ namespace :clsi do
       print "\tchmod a+s chrooted#{command}\n"
     end
   end
-  
+
+  task :clean => ['clsi:clean_cache', 'clsi:clean_output'] do
+  end
   desc "Remove cached urls that haven't been access recently"
   task :clean_cache => :environment do
     UrlCache.destroy_all(['last_accessed < ?', (ENV['CACHE_AGE'] || 5).to_i.days.ago])
