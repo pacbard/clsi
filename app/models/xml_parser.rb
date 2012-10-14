@@ -1,3 +1,5 @@
+require "base64"
+
 class XMLParser
   # Take an XML document as described at http://code.google.com/p/common-latex-service-interface/wiki/CompileRequestFormat
   # and return a hash containing the parsed data.
@@ -48,9 +50,12 @@ class XMLParser
       end
       
       url = resource_tag.attributes['url']
-      if resource_tag.cdatas.empty?
+      encoding = resource_tag.attributes['encoding']
+      if encoding.eql?('base64')
+        content = Base64.decode64(resource_tag.text.to_s.strip)
+      elsif resource_tag.cdatas.empty?
         content = resource_tag.text.to_s.strip
-      else
+      elsif
         content = resource_tag.cdatas.join
       end
       
