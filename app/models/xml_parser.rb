@@ -55,7 +55,7 @@ class XMLParser
         content = Base64.decode64(resource_tag.cdatas.join)
       elsif resource_tag.cdatas.empty?
         content = resource_tag.text.to_s.strip
-      elsif
+      else
         content = resource_tag.cdatas.join
       end
       
