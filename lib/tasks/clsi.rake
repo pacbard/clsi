@@ -26,13 +26,13 @@ namespace :clsi do
   end
   desc "Remove cached urls that haven't been access recently"
   task :clean_cache => :environment do
-    print "Cleaning cached urls that haven't been access recently"
+    print "Cleaning cached urls that haven't been access recently\n"
     UrlCache.destroy_all(['last_accessed < ?', (ENV['CACHE_AGE'] || 5).to_i.days.ago])
   end
   
   desc "Removes old compiles from the output directory" 
   task :clean_output => :environment do
-    print "Cleaning old compiles from the output directory"
+    print "Cleaning old compiles from the output directory\n"
     system("find #{SERVER_PUBLIC_DIR}/output -mindepth 1 -maxdepth 1 -mmin +60 | xargs rm -rf")
   end
 end
